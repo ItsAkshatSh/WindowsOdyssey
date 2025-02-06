@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://x05grhvw7wn7"]
+
+[ext_resource type="PackedScene" uid="uid://rv5qqfqmlkjb" path="res://scenes/player.tscn" id="1_4y2x1"]
+[ext_resource type="Texture2D" uid="uid://cw7tsyvllfb1s" path="res://assets/image.jpg" id="1_oq3t4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_f6sjl"]
+distance = -524.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2d1u"]
+normal = Vector2(-0.999996, 0.00277007)
+distance = -452.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8okmo"]
+normal = Vector2(1, 0)
+distance = -1114.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kbuae"]
+normal = Vector2(0.00365628, 0.999993)
+distance = -602.95
+
+[node name="Game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -338.0
+offset_top = 45.0
+offset_right = 813.0
+offset_bottom = 703.0
+texture = ExtResource("1_oq3t4")
+expand_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("1_4y2x1")]
+position = Vector2(651, 580)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(237, 378)
+process_callback = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
+
+[node name="floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(641, 142)
+shape = SubResource("WorldBoundaryShape2D_f6sjl")
+
+[node name="wall right" type="StaticBody2D" parent="."]
+position = Vector2(355, 139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall right"]
+shape = SubResource("WorldBoundaryShape2D_e2d1u")
+
+[node name="wall left" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall left"]
+position = Vector2(767, 545)
+shape = SubResource("WorldBoundaryShape2D_8okmo")
+
+[node name="roof" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roof"]
+position = Vector2(-212, 647)
+shape = SubResource("WorldBoundaryShape2D_kbuae")
