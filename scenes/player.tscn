@@ -214,20 +214,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv6xy"]
-radius = 60.7454
+radius = 77.4145
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ldlof")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(161, 189.5)
-scale = Vector2(7.70833, 8.89582)
+position = Vector2(197, 230)
+scale = Vector2(9.20833, 10.5833)
 sprite_frames = SubResource("SpriteFrames_xg3r1")
 animation = &"jump"
 frame_progress = 0.214758
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(176, 289)
+position = Vector2(212, 334)
 shape = SubResource("CircleShape2D_hv6xy")
 
 [node name="RollTimer" type="Timer" parent="."]

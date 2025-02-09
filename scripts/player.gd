@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const WALK_SPEED = 500.0
-const RUN_SPEED = 700.0
-const JUMP_VELOCITY = -600.0
+const WALK_SPEED = 550.0
+const RUN_SPEED = 750.0
+const JUMP_VELOCITY = -800.0
 
 @onready var sprite = $AnimatedSprite2D  # Ensure this matches your scene structure
 
